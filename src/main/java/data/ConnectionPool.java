@@ -10,11 +10,9 @@ public class ConnectionPool {
     private static ConnectionPool pool = null;
     private static DataSource dataSource = null;
 
-    // Constructor private để đảm bảo chỉ có một instance (Singleton)
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
-            // Đổi tên JNDI cho đúng với context.xml
             dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/workshop1");
         } catch (NamingException e) {
             e.printStackTrace();
@@ -22,7 +20,6 @@ public class ConnectionPool {
         }
     }
 
-    // Lấy instance duy nhất của ConnectionPool
     public static synchronized ConnectionPool getInstance() {
         if (pool == null) {
             pool = new ConnectionPool();
@@ -30,7 +27,6 @@ public class ConnectionPool {
         return pool;
     }
 
-    // Lấy một kết nối từ pool
     public Connection getConnection() {
         try {
             return dataSource.getConnection();
@@ -40,7 +36,6 @@ public class ConnectionPool {
         }
     }
 
-    // Trả lại kết nối vào pool
     public void freeConnection(Connection c) {
         if (c != null) {
             try {

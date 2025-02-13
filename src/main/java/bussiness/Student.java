@@ -4,10 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- *
- * @author rio
- */
+
 public class Student {
 
     private int id;
