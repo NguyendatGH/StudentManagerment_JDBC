@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/workshop1">
+    <Resource auth="Container" 
+              name="jdbc/workshop1" 
+              driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+              url="jdbc:sqlserver://localhost;databaseName=workshop1;" 
+              username="xxx"
+              password="xxxxx" 
+              logAbandoned="true"
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"
+              removeAbandoned="true"
+              removeAbandonedTimeout="60"
+              type="javax.sql.DataSource"
+    />
+</Context>
